@@ -1,3 +1,1 @@
-require("pfg")
-
-
+require("init")
