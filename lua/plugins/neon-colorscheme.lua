@@ -7,7 +7,8 @@ return {
 			vim.g.neon_italic_keyword = true
 			vim.g.neon_italic_function = true
 			vim.g.neon_italic_italic_comment = true
-			vim.g.neon_transparent = true
+			-- The next line is for transparent background
+			-- vim.g.neon_transparent = true
 			vim.g.neon_bold = true
 			vim.cmd("colorscheme neon")
 
