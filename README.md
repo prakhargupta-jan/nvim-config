@@ -1,1 +1,2 @@
-# Personal Nvim Config from scratch
+# Personal Nvim Config
+- Copy at your own risk.
