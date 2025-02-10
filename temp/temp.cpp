@@ -11,7 +11,10 @@ int main() {
   if (b == 1) {
     a = 2;
   }
+	cout << "Hello" << endl;
   b = a + b;
+	
+
   cout << b << endl;
   cout << b << a << endl;
   cout << a + 12 << endl;

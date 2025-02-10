@@ -9,7 +9,7 @@ return {
 		'williamboman/mason-lspconfig.nvim',
 		config = function()
 			require('mason-lspconfig').setup {
-				ensure_installed = { 'lua_ls', 'clangd', 'tsserver', 'rust_analyzer' },
+				ensure_installed = { 'lua_ls', 'clangd', 'ts_ls', 'rust_analyzer', 'gopls' },
 			}
 		end,
 	},
@@ -22,7 +22,7 @@ return {
 			-- c/c++
 			lspconfig.clangd.setup {}
 			-- ts/js
-			lspconfig.tsserver.setup {}
+			lspconfig.ts_ls.setup {}
 			-- rust
 			lspconfig.rust_analyzer.setup {
 				settings = {
@@ -33,6 +33,8 @@ return {
 					}
 				}
 			}
+			-- go
+			lspconfig.gopls.setup {}
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(ev)
 					local opts = { buffer = ev.buf }
@@ -50,7 +52,7 @@ return {
 					end, opts)
 				end,
 			})
-			local servers = { 'tsserver', 'lua_ls', 'clangd' }
+			local servers = { 'ts_ls', 'lua_ls', 'clangd', 'gopls', 'rust_analyzer' }
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup {
